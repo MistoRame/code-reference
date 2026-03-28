@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap');
+
+/* ── VARIABILI GLOBALI ────────────────────────────────── */
+:root {
+  --colore-principale: #157dc3;
+  --colore-titolo:     #c0392b;
+  --colore-sfondo:     #f5f0e8;
+  --font-principale:   'Chakra Petch', sans-serif;
+  --font-secondario:   'Orbitron', sans-serif;
+}
+
+/* ── BASE ─────────────────────────────────────────────── */
+body {
+  font-family: var(--font-principale);
+  font-size: 120%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--colore-sfondo);
+  color: #2c2c2c;
+}
+
+h1, h2 { font-family: var(--font-secondario); }
+.header h1, .header h2 { font-family: var(--font-principale); }
+
+/* ── TITOLO ───────────────────────────────────────────── */
+.titolo {
+  text-align: center;
+  color: var(--colore-titolo);
+  border-bottom: 3px solid var(--colore-titolo);
+  padding-bottom: 10px;
+}
+
+/* ── INDICE ───────────────────────────────────────────── */
+.indice {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.indice-titolo {
+  font-family: var(--font-secondario);
+  font-size: 80%;
+  color: var(--colore-titolo);
+  margin-bottom: 4px;
+}
+
+.indice a {
+  color: var(--colore-principale);
+  font-size: 90%;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.indice a:hover { background-color: #e0f2f5; }
+
+/* ── SEZIONI ──────────────────────────────────────────── */
+section {
+  background-color: whitesmoke;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+}
+
+/* ── LISTE ────────────────────────────────────────────── */
+ul { list-style-type: none; padding-left: 0; }
+li > ul { padding-left: 30px; }
+
+li:not(.sottoelemento) {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border: solid 0.5px #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  transition: background-color 0.1s ease-in-out;
+}
+
+li:not(.sottoelemento):hover { background-color: #ebf6f8; }
+
+li.sottoelemento {
+  padding-left: 20px;
+  text-indent: -20px;
+  margin-bottom: 8px;
+}
+
+/* ── DETAILS / SUMMARY ────────────────────────────────── */
+summary {
+  list-style: none;
+  line-height: 1.6;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+summary::before { content: '▶ '; color: var(--colore-principale); font-size: 60%; }
+details[open] summary::before { content: '▼ '; }
+details[open] summary { margin-bottom: 10px; }
+details > *:not(summary) { margin-left: 20px; margin-top: 8px; }
+details p { line-height: 1.6; margin: 6px 0; }
+
+/* ── TESTO E CODICE ───────────────────────────────────── */
+code {
+  color: var(--colore-principale);
+  font-size: 120%;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.attributo { color: var(--colore-titolo); }
+.commento  { color: darkgreen; }
+
+/* ── LINK ─────────────────────────────────────────────── */
+a { color: var(--colore-principale); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── IMMAGINI ─────────────────────────────────────────── */
+img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+img.imgbutton {
+  width: 70px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* ── HEADER ESEMPIO H1-H6 ─────────────────────────────── */
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* ── TABELLE ──────────────────────────────────────────── */
+.tabellaesempio {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 20px;
+}
+
+table { border-collapse: collapse; background-color: rgb(227,220,220); }
+th, td { border: 1px solid #302e2e; padding: 8px 12px; }
+
+/* ── MODULI ───────────────────────────────────────────── */
+textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: var(--font-principale);
+  font-size: 100%;
+}
+
+fieldset {
+  max-width: 400px;
+  border: 3px solid #1f1f1f;
+  border-radius: 6px;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+.pagina {
+  transition: opacity 0.5s ease;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 5px 20px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.tab:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.tab.attiva-tab {
+  border-bottom: 3px solid white;
+}

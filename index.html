@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>Dizionario HTML</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1 class="titolo">
+        <span class="tab attiva-tab" onclick="cambiaPagina('pagina-html', this)"
+          >HTML</span
+        >
+        <span class="tab" onclick="cambiaPagina('pagina-css', this)">CSS</span>
+      </h1>
+      <!-- INDICE HTML -->
+      <div id="indice-html" class="indice">
+        <span class="indice-titolo">Indice</span>
+        <a href="#base">Elementi base</a>
+        <a href="#semantica">Semantica</a>
+        <a href="#testo">Testo</a>
+        <a href="#liste">Liste</a>
+        <a href="#link">Link</a>
+        <a href="#img">Immagini</a>
+        <a href="#tabelle">Tabelle</a>
+        <a href="#moduli">Moduli</a>
+        <a href="#varie">Varie</a>
+      </div>
+      <!-- INDICE CSS -->
+      <div id="indice-css" class="indice" style="display: none">
+        <span class="indice-titolo">Indice</span>
+        <a href="#selettori">Selettori</a>
+        <a href="#colori">Colori</a>
+      </div>
+      <!-- PAGINA HTML -->
+      <div id="pagina-html" class="pagina">
+        <section id="base" class="base">
+          <h2>Elementi base</h2>
+          <ul>
+            <!-- HTML -->
+            <li>
+              <code>&lt;html&gt;</code> - Elemento radice di ogni pagina HTML
+            </li>
+            <!-- ELEMENTI DENTRO HEAD -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;head&gt;</code> - Contiene metadati della pagina
+                </summary>
+                <ul>
+                  <!-- TITLE -->
+                  <li class="sottoelemento">
+                    <code>&lt;title&gt;</code> - Definisce il titolo della
+                    pagina, visualizzato sulla scheda del browser
+                  </li>
+                  <li class="sottoelemento">
+                    <code>&lt;meta&gt;</code> - Contiene informazioni relative
+                    alla pagina web.
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <!-- ELEMENTI DENTRO BODY -->
+            <li>
+              <code>&lt;body&gt;</code> - Contiene il contenuto visibile della
+              pagina
+            </li>
+            <!-- H1-H6 -->
+            <li>
+              <code>&lt;h1&gt;</code> \ <code>&lt;h6&gt;</code> - Elementi per
+              definire titoli di diverso livello
+              <div class="header" headingoffset="1">
+                <h1>Esempio H1</h1>
+                <h2>Esempio H2</h2>
+                <h3>Esempio H3</h3>
+                <h4>Esempio H4</h4>
+                <h5>Esempio H5</h5>
+                <h6>Esempio H6</h6>
+              </div>
+            </li>
+            <!-- P -->
+            <li>
+              <code>&lt;p&gt;</code> - Elemento per definire paragrafi. Va a
+              capo prima e dopo, ha margini verticali di default.
+            </li>
+            <!-- SPAN -->
+            <li>
+              <code>&lt;span&gt;</code>
+              - Elemento inline per definire parti di testo all'interno di altri
+              elementi. Non va a capo, é un contenutore generico
+            </li>
+            <!-- DIV -->
+            <li>
+              <code>&lt;div&gt;</code>
+              - Elemento per definire blocchi di contenuto
+            </li>
+          </ul>
+        </section>
+        <!-- SEMANTICA -->
+        <section id="semantica" class="semantica">
+          <h2>Elementi semantici</h2>
+          <p>
+            A differenza degli elementi base come <code>&lt;div&gt;</code>,
+            <code>&lt;span&gt;</code> e <code>&lt;p&gt;</code> che sono
+            generici, gli elementi semantici comunicano il
+            <em>significato</em> del contenuto al browser e agli screen reader
+          </p>
+          <ul>
+            <!-- HEADER -->
+            <li>
+              <code>&lt;header&gt;</code>
+            </li>
+            <!-- FOOTER -->
+            <li>
+              <code>&lt;footer&gt;</code>
+            </li>
+            <!-- NAV -->
+            <li>
+              <code>&lt;nav&gt;</code>
+            </li>
+            <!-- MAIN -->
+            <li>
+              <code>&lt;main&gt;</code>
+            </li>
+            <!-- ARTICLE -->
+            <li>
+              <code>&lt;article&gt;</code>
+            </li>
+            <!-- ASIDE -->
+            <li>
+              <code>&lt;aside&gt;</code>
+            </li>
+            <!-- SECTION -->
+            <li>
+              <code>&lt;section&gt;</code>
+            </li>
+          </ul>
+        </section>
+        <!-- TESTO -->
+        <section id="testo" class="testo">
+          <h2>Elementi di testo</h2>
+          <p>
+            Questi vengono utilizzati per descrivere la struttura della pagina,
+            per esempio titoli, sottotitoli, e paragrafi. Essi inoltre
+            convogliano informazioni semantiche, per esempio dove debba essere
+            posta l'enfasi, la definizione degli acronimi utilizzati, o il testo
+            che rappresenta una citazione.
+          </p>
+          <ul>
+            <!-- B -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;b&gt;</code> - <b>Bold. Caratteri in grassetto</b>
+                </summary>
+                <p>
+                  L'elemento <code>&lt;b&gt;</code> è utilizzato per indicare
+                  che il testo all'interno del tag deve essere visualizzato in
+                  grassetto. Tuttavia, a differenza di altri elementi come
+                  <code>&lt;strong&gt;</code>, l'elemento <code>&lt;b&gt;</code>
+                  non conferisce alcuna importanza semantica al testo. Viene
+                  utilizzato principalmente per scopi di formattazione visiva,
+                  senza implicare un significato particolare.
+                </p>
+              </details>
+            </li>
+            <!-- I -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;i&gt;</code> - <i>Italic. Caratteri in corsivo</i>
+                </summary>
+                <p>
+                  L'elemento <code>&lt;i&gt;</code> è utilizzato per indicare
+                  che il testo all'interno del tag deve essere visualizzato in
+                  corsivo. Tuttavia, a differenza di altri elementi come
+                  <code>&lt;em&gt;</code>, l'elemento <code>&lt;i&gt;</code>
+                  non conferisce alcuna importanza semantica al testo. Viene
+                  utilizzato principalmente per scopi di formattazione visiva,
+                  senza implicare un significato particolare.
+                </p>
+              </details>
+            </li>
+            <!-- U -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;u&gt;</code> -
+                  <u>Underline. Caratteri sottolineati</u>
+                </summary>
+                <p>
+                  L'elemento <code>&lt;u&gt;</code> è utilizzato per indicare
+                  che il testo all'interno del tag deve essere visualizzato
+                  sottolineato. Tuttavia, a differenza di altri elementi come
+                  <code>&lt;ins&gt;</code>, l'elemento <code>&lt;u&gt;</code>
+                  non conferisce alcuna importanza semantica al testo. Viene
+                  utilizzato principalmente per scopi di formattazione visiva,
+                  senza implicare un significato particolare.
+                </p>
+              </details>
+            </li>
+            <!-- SUP -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;sup&gt;</code> -
+                  <sup>Superscript. Caratteri in apice</sup>
+                </summary>
+                <p>
+                  L'elemento <code>&lt;sup&gt;</code> è utilizzato per indicare
+                  che il testo all'interno del tag deve essere visualizzato in
+                  apice. Viene comunemente usato per rappresentare esponenti,
+                  note a piè di pagina o simboli matematici.
+                </p>
+              </details>
+            </li>
+            <!-- SUB -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;sub&gt;</code> -
+                  <sub>Subscript. Caratteri in pedice</sub>
+                </summary>
+                <p>
+                  L'elemento <code>&lt;sub&gt;</code> è utilizzato per indicare
+                  che il testo all'interno del tag deve essere visualizzato in
+                  pedice. Viene comunemente usato per rappresentare indici o
+                  simboli matematici.
+                </p>
+              </details>
+            </li>
+            <!-- BR -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;br&gt;</code> - Break. Elemento per andare a capo
+                </summary>
+                <p>
+                  L'elemento <code>&lt;br&gt;</code> è utilizzato per inserire
+                  un'interruzione di linea all'interno del testo. A differenza
+                  di altri elementi come <code>&lt;p&gt;</code>, che creano un
+                  nuovo paragrafo, l'elemento <code>&lt;br&gt;</code> non
+                  aggiunge spazio verticale tra le linee, ma semplicemente va a
+                  capo. Non necessita di un tag di chiusura, è un elemento
+                  vuoto.
+                </p>
+              </details>
+            </li>
+            <!-- HR -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;hr&gt;</code> - Horizontal Rule. Elemento per
+                  disegnare una linea orizzontale
+                </summary>
+                <p>
+                  L'elemento <code>&lt;hr&gt;</code> è utilizzato per inserire
+                  una linea orizzontale nella pagina. Viene comunemente usato
+                  per separare sezioni di contenuto o per creare una divisione
+                  visiva tra elementi. Non necessita di un tag di chiusura, è un
+                  elemento vuoto.
+                </p>
+              </details>
+            </li>
+            <!-- STRONG -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;strong&gt;</code> - Testo importante. Visualizzato
+                  in grassetto
+                </summary>
+                <p>
+                  L'elemento <code>&lt;strong&gt;</code> è utilizzato per
+                  indicare che il testo all'interno del tag è importante o ha un
+                  significato particolare. Viene visualizzato in grassetto.
+                </p>
+              </details>
+            </li>
+            <!-- EM -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;em&gt;</code> - Testo enfatizzato. Visualizzato in
+                  corsivo
+                </summary>
+                <p>
+                  L'elemento <code>&lt;em&gt;</code> è utilizzato per indicare
+                  che il testo all'interno del tag è enfatizzato o ha un
+                  significato particolare. Viene visualizzato in corsivo.
+                </p>
+              </details>
+            </li>
+            <!-- BLOCKQUOTE -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;blockquote&gt;</code> - Citazione lunga.
+                  Visualizzato con rientro
+                </summary>
+                <p>
+                  L'elemento <code>&lt;blockquote&gt;</code> è utilizzato per
+                  indicare una citazione lunga, che occupa un intero paragrafo.
+                  Viene visualizzato con un rientro a sinistra e spesso con uno
+                  stile diverso per distinguere la citazione dal resto del
+                  testo.
+                </p>
+              </details>
+            </li>
+            <!-- Q -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;q&gt;</code> - Elemento per citazioni brevi.
+                </summary>
+                <p>
+                  L'elemento <code>&lt;q&gt;</code> è utilizzato per indicare
+                  una citazione breve. Viene visualizzato tra virgolette.
+                </p>
+              </details>
+            </li>
+            <!-- ABBR -->
+            <li>
+              <code>&lt;abbr&gt;</code> - Elemento per abbreviazioni.
+              Visualizzato con un tooltip che mostra l'intero termine quando si
+              passa il
+              <abbr title="Sorpresa!">mouse sopra</abbr>
+            </li>
+            <!-- CITE -->
+            <li>
+              <code>&lt;cite&gt;</code> - Elemento per citazioni di opere.
+              Visualizzato in corsivo
+            </li>
+            <!-- DFN -->
+            <li>
+              <code>&lt;dfn&gt;</code> - Elemento per definizioni. Visualizzato
+              in corsivo in alcuni browser, tranne Safari e Chrome
+            </li>
+            <!-- ADDRESS -->
+            <li>
+              <code>&lt;address&gt;</code> - Elemento per contenere le
+              informazioni di contatto. Spesso visualizzato in corsivo
+            </li>
+            <!-- INS -->
+            <li>
+              <code>&lt;ins&gt;</code> - Elemento per definire pezzi di testo
+              appena inseriti.
+              <ins>Visualizzato in sottolineato</ins>
+            </li>
+            <!-- DEL -->
+            <li>
+              <code>&lt;del&gt;</code> - Elemento per definire parti di testo
+              cancellato.
+              <del>Visualizzato in barrato</del>
+            </li>
+            <!-- S -->
+            <li>
+              <code>&lt;s&gt;</code> - Elemento per definire testo non più
+              corretto o rilevante. <s>Visualizzato in barrato</s>
+            </li>
+          </ul>
+        </section>
+        <!-- LISTE -->
+        <section id="liste" class="liste">
+          <h2>Liste:</h2>
+          <ul>
+            <!-- OL -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;ol&gt;</code> - Elemento per definire liste
+                  ordinate, utilizzano numeri (CSS per lettere, numeri
+                  romani..). Gli elementi della lista sono rappresentati da
+                  &lt;li&gt;
+                </summary>
+                <ol>
+                  <li>Primo elemento</li>
+                  <li>Secondo elemento</li>
+                  <li>Terzo elemento</li>
+                </ol>
+              </details>
+            </li>
+            <!-- UL -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;ul&gt;</code> - Elemento per definire liste non
+                  ordinate, utilizzano puntatori. Gli elementi della lista sono
+                  rappresentati da &lt;li&gt;
+                </summary>
+                <ul>
+                  <li>Primo elemento</li>
+                  <li>Secondo elemento</li>
+                  <li>Terzo elemento</li>
+                </ul>
+              </details>
+            </li>
+            <!-- DL -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;dl&gt;</code> - Elemento per definire liste di
+                  definizioni, usate per definire una terminologia. Gli elementi
+                  della lista sono rappresentati da &lt;dt&gt; (termine) e
+                  &lt;dd&gt; (definizione)
+                </summary>
+                <dl>
+                  <dt>HTML</dt>
+                  <dd>HyperText Markup Language</dd>
+                  <dt>CSS</dt>
+                  <dd>Cascading Style Sheets</dd>
+                  <dt>JavaScript</dt>
+                  <dd>Linguaggio di programmazione per il web</dd>
+                </dl>
+              </details>
+            </li>
+          </ul>
+        </section>
+        <!-- LINK -->
+        <section id="link" class="link">
+          <h2>Link:</h2>
+          <ul>
+            <li>
+              <details>
+                <summary>
+                  <!-- A -->
+                  <code>&lt;a&gt;</code> - Elemento per definire un collegamento
+                  ipertestuale
+                </summary>
+                <p>Attributi dei link:</p>
+                <p>
+                  L'attributo <code>href</code> specifica l'URL di destinazione.
+                  Gli URL possono essere:
+                </p>
+                <ul>
+                  <li class="sottoelemento">
+                    <b>Assoluti</b> — contengono l'intero percorso incluso il
+                    dominio (es. <code>https://www.google.com</code>)
+                  </li>
+                  <li class="sottoelemento">
+                    <b>Relativi</b> — contengono solo il percorso relativo al
+                    file HTML (es. <code>/pagina.html</code>)
+                  </li>
+                </ul>
+                <p>Esempio: <a href="https://www.google.com">Google</a></p>
+                <ul>
+                  <!-- TIPI DI LINK -->
+                  <li class="sottoelemento">
+                    <!-- MAILTO -->
+                    <code>mailto</code> - Tipo di link che lancia il programma
+                    di posta elettronica predefinito con l'indirizzo email
+                    specificato.
+                    <code>&lt;a href="mailto:example@example.com"&gt;</code>
+                    Esempio: <a href="mailto:example@example.com">Email</a>
+                  </li>
+                  <li class="sottoelemento">
+                    <!-- TARGET -->
+                    <code>target</code> - Tipo di link che si apre in una nuova
+                    scheda del browser.
+                    <code
+                      >&lt;a href="https://www.google.com"
+                      target="_blank"&gt;</code
+                    >
+                    Esempio:
+                    <a href="https://www.google.com" target="_blank">Google</a>
+                  </li>
+                  <li class="sottoelemento">
+                    <!-- ANCORE -->
+                    <code>anchor</code> - Tipo di link che si sposta a una
+                    sezione specifica della stessa pagina. L'attributo
+                    <code>href</code> specifica l'ID dell'elemento di
+                    destinazione preceduto da un cancelletto (#). Gli elementi
+                    di destinazione devono avere l'attributo
+                    <code>id</code> corrispondente.
+                    <code>&lt;a href="#testo"&gt;</code>
+                    Esempio:
+                    <a href="#testo">Vai alla sezione Testo</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </section>
+        <!-- IMMAGINI -->
+        <section id="img" class="img">
+          <h2>Immagini:</h2>
+          <ul>
+            <li>
+              <details>
+                <summary>
+                  <!-- IMG -->
+                  <code>&lt;img&gt;</code> - Elemento per inserire immagini
+                  nella pagina. Non necessita di un tag di chiusura, è un
+                  elemento vuoto.
+                </summary>
+                <p>Attributi:</p>
+                <ul>
+                  <li class="sottoelemento">
+                    <!-- SRC -->
+                    <code>src</code> - Specifica l'URL dell'immagine da
+                    visualizzare.
+                  </li>
+                  <li class="sottoelemento">
+                    <!-- ALT -->
+                    <code>alt</code> - Fornisce un testo che descrive
+                    l'immagine, utilizzato quando l'immagine non può essere
+                    visualizzata o per migliorare l'accessibilità.
+                  </li>
+                  <li class="sottoelemento">
+                    <!-- WIDTH E HEIGHT -->
+                    <code>width</code> e <code>height</code> - Specificano la
+                    larghezza e l'altezza dell'immagine in pixel.
+                  </li>
+                  <li class="sottoelemento">
+                    <!-- TITLE -->
+                    <code>title</code> - Fornisce un testo che viene
+                    visualizzato come tooltip quando si passa il mouse sopra
+                    l'immagine.
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <!-- FIGURE -->
+              <code>&lt;figure&gt;</code> - Elemento per raggruppare una o più
+              immagini con una didascalia.
+            </li>
+            <li>
+              <!-- FIGCAPTION -->
+              <code>&lt;figcaption&gt;</code> - Elemento per fornire una
+              didascalia a un elemento
+            </li>
+          </ul>
+          <figure>
+            <img src="Immagini/NY.webp" alt="New York" title="New York" />
+            <figcaption>Skyline di New York 2025</figcaption>
+          </figure>
+        </section>
+        <!-- TABELLE -->
+        <section id="tabelle" class="tabelle">
+          <h2>Tabelle:</h2>
+          <ul>
+            <li>
+              <!-- TABLE -->
+              <code>&lt;table&gt;</code> - Elemento per definire una tabella, il
+              contenuto viene trascritto riga per riga, da sinistra a destra.
+            </li>
+            <li>
+              <!-- TR -->
+              <code>&lt;tr&gt;</code> - Elemento per definire una riga della
+              tabella. é seguito da uno o più elementi <code>&lt;td&gt;</code> o
+              <code>&lt;th&gt;</code> che definiscono le celle della riga.
+            </li>
+            <li>
+              <!-- TD -->
+              <code>&lt;td&gt;</code> - Elemento per definire una cella dati
+              all'interno di una riga della tabella.
+            </li>
+            <li>
+              <!-- TH -->
+              <details>
+                <summary>
+                  <code>&lt;th&gt;</code> - Elemento per definire una cella
+                  intestazione all'interno di una riga della tabella. Viene
+                  visualizzato in grassetto e centrato per impostazione
+                  predefinita.
+                </summary>
+                <p>Attributi:</p>
+                <ul>
+                  <li class="sottoelemento">
+                    <!-- SCOPE -->
+                    <code>scope</code> - Consente di indicare se il titolo
+                    riguarda una colonna (col) o una riga (row)
+                  </li>
+                  <li class="sottoelemento">
+                    <!-- COLSPAN -->
+                    <code>colspan</code> - Indica su quante colonne deve
+                    estendersi la cella. Rappresentato da un valore numerico.
+                    Attributo usato anche su <code>&lt;td&gt;</code>
+                  </li>
+                  <li class="sottoelemento">
+                    <!-- ROWSPAN -->
+                    <code>rowspan</code> - Indica su quante righe deve
+                    estendersi la cella. Rappresentato da un valore numerico.
+                    Attributo usato anche su <code>&lt;td&gt;</code>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+          <div class="tabellaesempio">
+            <div class="codice">
+              <pre><code>&lt;table&gt;
+   &lt;tr&gt;
+     &lt;th&gt;&lt;/th&gt;
+     &lt;th scope="col"&gt;9am&lt;/th&gt;
+     &lt;th scope="col"&gt;10am&lt;/th&gt;
+     &lt;th scope="col"&gt;11am&lt;/th&gt;
+     &lt;th scope="col"&gt;12am&lt;/th&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+     &lt;th scope="row"&gt;Lunedi&lt;/th&gt;
+     &lt;td colspan="2"&gt;Matematica&lt;/td&gt;
+     &lt;td&gt;Storia&lt;/td&gt;
+     &lt;td rowspan="2"&gt;Informatica&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+     &lt;th scope="row"&gt;Martedi&lt;/th&gt;
+     &lt;td&gt;Informatica&lt;/td&gt;
+     &lt;td&gt;Matematica&lt;/td&gt;
+     &lt;td&gt;Storia&lt;/td&gt;
+   &lt;/tr&gt;
+ &lt;/table&gt;</code></pre>
+            </div>
+            <div class="esempio">
+              <table>
+                <tr>
+                  <th></th>
+                  <th scope="col">9am</th>
+                  <th scope="col">10am</th>
+                  <th scope="col">11am</th>
+                  <th scope="col">12am</th>
+                </tr>
+                <tr>
+                  <th scope="row">Lunedi</th>
+                  <td colspan="2">Matematica</td>
+                  <td>Storia</td>
+                  <td rowspan="2">Informatica</td>
+                </tr>
+                <tr>
+                  <th scope="row">Martedi</th>
+                  <td>Informatica</td>
+                  <td>Matematica</td>
+                  <td>Storia</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <p>
+            Le tabelle più lunghe possono essere suddivise nelle sezioni
+            <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> e
+            <code>&lt;tfoot&gt;</code>
+          </p>
+          <ul>
+            <!-- THEAD -->
+            <li>
+              <code>&lt;thead&gt;</code> - I titoli della tabella dovranno
+              essere racchiusi in questo elemento
+            </li>
+            <!-- TBODY -->
+            <li>
+              <code>&lt;tbody&gt;</code> - Il corpo della tabella dovrà essere
+              racchiuso in questo elemento
+            </li>
+            <!-- TFOOT -->
+            <li>
+              <code>&lt;tfoot&gt;</code> - Contiente l'ultima riga della tabella
+            </li>
+          </ul>
+          <div class="tabellaesempio">
+            <div class="codice">
+              <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Data&lt;/th&gt;
+      &lt;th&gt;Entrate&lt;/th&gt;
+      &lt;th&gt;Uscite&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1 Gennaio&lt;/th&gt;
+      &lt;td&gt;457&lt;/td&gt;
+      &lt;td&gt;243&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2 Gennaio&lt;/th&gt;
+      &lt;td&gt;123&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3 Gennaio&lt;/th&gt;
+      &lt;td&gt;1235&lt;/td&gt;
+      &lt;td&gt;457&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4 Gennaio&lt;/th&gt;
+      &lt;td&gt;578&lt;/td&gt;
+      &lt;td&gt;1454&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5 Gennaio&lt;/th&gt;
+      &lt;td&gt;233&lt;/td&gt;
+      &lt;td&gt;452&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6 Gennaio&lt;/th&gt;
+      &lt;td&gt;788&lt;/td&gt;
+      &lt;td&gt;123&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7 Gennaio&lt;/th&gt;
+      &lt;td&gt;678&lt;/td&gt;
+      &lt;td&gt;123&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8 Gennaio&lt;/th&gt;
+      &lt;td&gt;346&lt;/td&gt;
+      &lt;td&gt;243&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9 Gennaio&lt;/th&gt;
+      &lt;td&gt;890&lt;/td&gt;
+      &lt;td&gt;234&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10 Gennaio&lt;/th&gt;
+      &lt;td&gt;465&lt;/td&gt;
+      &lt;td&gt;267&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Totale&lt;/th&gt;
+      &lt;td&gt;4782&lt;/td&gt;
+      &lt;td&gt;3342&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+            <div class="esempio">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Entrate</th>
+                    <th>Uscite</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1 Gennaio</th>
+                    <td>457</td>
+                    <td>243</td>
+                  </tr>
+                  <tr>
+                    <th>2 Gennaio</th>
+                    <td>123</td>
+                    <td>23</td>
+                  </tr>
+                  <tr>
+                    <th>3 Gennaio</th>
+                    <td>1235</td>
+                    <td>457</td>
+                  </tr>
+                  <tr>
+                    <th>4 Gennaio</th>
+                    <td>578</td>
+                    <td>1454</td>
+                  </tr>
+                  <tr>
+                    <th>5 Gennaio</th>
+                    <td>233</td>
+                    <td>452</td>
+                  </tr>
+                  <tr>
+                    <th>6 Gennaio</th>
+                    <td>788</td>
+                    <td>123</td>
+                  </tr>
+                  <tr>
+                    <th>7 Gennaio</th>
+                    <td>678</td>
+                    <td>123</td>
+                  </tr>
+                  <tr>
+                    <th>8 Gennaio</th>
+                    <td>346</td>
+                    <td>243</td>
+                  </tr>
+                  <tr>
+                    <th>9 Gennaio</th>
+                    <td>890</td>
+                    <td>234</td>
+                  </tr>
+                  <tr>
+                    <th>10 Gennaio</th>
+                    <td>465</td>
+                    <td>267</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Totale</th>
+                    <td>4782</td>
+                    <td>3342</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </section>
+        <!-- MODULI -->
+        <section id="moduli" class="moduli">
+          <h2>Moduli:</h2>
+          <ul>
+            <li>
+              <details>
+                <summary>
+                  <!-- FORM -->
+                  <code>&lt;form&gt;</code> - Elemento per definire un modulo,
+                  usato per raccogliere input dagli utenti. Deve sempre essere
+                  dotato degli attributi <code>action</code> e
+                  <code>method</code>.
+                </summary>
+                <p>Attributi:</p>
+                <ul>
+                  <li class="sottoelemento">
+                    <!-- ACTION -->
+                    <code>action</code> - Specifica l'URL a cui inviare i dati
+                    del modulo quando viene inviato.
+                  </li>
+                  <li class="sottoelemento">
+                    <!-- METHOD -->
+                    <code>method</code> - Specifica il metodo HTTP da utilizzare
+                    quando si inviano i dati del modulo. I valori comuni sono
+                    <code>GET</code> e <code>POST</code>. GET è ideale per
+                    inviare brevi moduli e quando occorre visualizzare i dati da
+                    un database. POST è più adatto per inviare moduli più
+                    lunghi, se c'è necessità di mandare dei file, se si modifica
+                    un database, o quando si devono inviare dati sensibili,
+                    poiché i dati non vengono visualizzati nell'URL. Senza
+                    questo attributo, il modulo utilizza GET per impostazione
+                    predefinita.
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>
+                  <!-- INPUT -->
+                  <code>&lt;input&gt;</code> - Elemento per definire un campo di
+                  input all'interno di un modulo. Non necessita di un tag di
+                  chiusura.
+                </summary>
+                <p>Attributi:</p>
+                <ul>
+                  <li class="sottoelemento">
+                    <!-- TYPE -->
+                    <p>
+                      <code>type</code> - Specifica il tipo di campo di input.
+                    </p>
+                    <ul>
+                      <li class="sottoelemento">
+                        <!-- TEXT -->
+                        <code class="attributo">"text"</code> - input testuale
+                        generico
+                        <input type="text" />
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- PASSWORD -->
+                        <code class="attributo">"password"</code> - input per
+                        dati sensibili
+                        <input type="password" />
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- EMAIL -->
+                        <code class="attributo">"email"</code> - input per
+                        indirizzi email, il browser eseguirà una validazione di
+                        base per assicurarsi che l'input sia nel formato
+                        corretto.
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- URL -->
+                        <code class="attributo">"url"</code> - input per
+                        indirizzi web, il browser eseguirà una validazione di
+                        base per assicurarsi che l'input sia nel formato
+                        corretto.
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- DATE -->
+                        <code class="attributo">"date"</code> - input per la
+                        selezione di una data
+                        <input type="date" />
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- NUMBER -->
+                        <code class="attributo">"number"</code> - input numerico
+                        <input type="number" />
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- CHECKBOX -->
+                        <code class="attributo">"checkbox"</code> - casella di
+                        selezione e delesezione di una o più opzioni.
+                        L'attributo è accompagnato anche da <code>value</code>,
+                        che indica il valore associato a ciascun pulsante, e da
+                        <code>checked</code> se il valore deve essere
+                        selezionato al caricamento della pagina. Tutti i
+                        pulsanti di un gruppo devono avere lo stesso valore per
+                        l'attributo <code>name</code>.
+                        <input
+                          type="checkbox"
+                          name="opzionecheck"
+                          value="lunedi"
+                        />Lunedi
+                        <input
+                          type="checkbox"
+                          name="opzionecheck"
+                          value="martedi"
+                        />Martedi
+                        <input
+                          type="checkbox"
+                          name="opzionecheck"
+                          value="mercoledi"
+                        />Mercoledi
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- RADIO -->
+                        <code class="attributo">"radio"</code> - pulsanti di
+                        opzione che consentono una sola selezione da un gruppo
+                        di valori. Funziona similmente alle checkbox, con gli
+                        attributi <code>value</code>, <code>checked</code> e
+                        <code>name</code>.
+                        <input type="radio" name="opzioneradio" value="1" />1
+                        <input type="radio" name="opzioneradio" value="2" />2
+                        <input
+                          type="radio"
+                          name="opzioneradio"
+                          value="3"
+                          checked="checked"
+                        />3
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- FILE -->
+                        <code class="attributo">"file"</code> - input per il
+                        caricamento di file. L'attributo <code>accept</code>
+                        specifica i tipi di file accettati, e l'attributo
+                        <code>multiple</code> consente di selezionare più file
+                        contemporaneamente.
+                        <input type="file" accept=".jpg,.png" />
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- SUBMIT -->
+                        <code class="attributo">"submit"</code> - pulsante per
+                        inviare il modulo. Se non è presente un pulsante di
+                        questo tipo, il modulo viene inviato quando l'utente
+                        preme Invio all'interno di un campo di input.
+                        <input type="submit" value="Invia" />
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- IMAGE -->
+                        <code class="attributo">"image"</code> - Se si vuole
+                        utilizzare un'immagine come pulsante di invio, è
+                        possibile usare questo tipo di input. L'attributo
+                        <code>src</code> specifica l'URL dell'immagine da
+                        utilizzare.
+                        <div>
+                          <input type="text" />
+                          <input
+                            type="image"
+                            src="Immagini/invio.webp"
+                            width="100"
+                            height="100"
+                          />
+                        </div>
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- HIDDEN -->
+                        <code class="attributo">"hidden"</code> - Campo di input
+                        nascosto che non è visibile all'utente ma può essere
+                        utilizzato per inviare dati al server.
+                        <input type="hidden" />
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- REQUIRED -->
+                        <code class="attributo">"required"</code> - Attributo
+                        che rende obbligatorio il compimento del campo di input.
+                      </li>
+                      <li class="sottoelemento">
+                        <!-- SEARCH -->
+                        <code class="attributo">"search"</code> - input per
+                        ricerche, simile a <code>"text"</code> ma con
+                        funzionalità aggiuntive come un pulsante di
+                        cancellazione integrato in alcuni browser.
+                        <input type="search" placeholder="Inserisci URL" />
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="sottoelemento">
+                    <!-- NAME -->
+                    <code>name</code> - Specifica il nome del campo di input,
+                    usato come chiave quando i dati del modulo vengono inviati
+                    al server.
+                  </li>
+                  <li class="sottoelemento">
+                    <!-- MAXLENGTH -->
+                    <code>maxlength</code> - Specifica il numero massimo di
+                    caratteri che possono essere inseriti nel campo di input.
+                  </li>
+                  <li class="sottoelemento">
+                    <!-- PLACEHOLDER -->
+                    <code>placeholder</code> - Valore visualizzato nella casella
+                    di testo finchè l'utente non inserirà del testo nell'area.
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <!-- TEXTAREA -->
+            <li>
+              <code>&lt;textarea&gt;</code> - Elemento per definire un campo di
+              input multilinea. A differenza di <code>&lt;input&gt;</code>,
+              necessita di un tag di chiusura. Tutto il testo che compare tra i
+              due tag verrà visualizzato all'interno del campo di input come
+              testo predefinito.
+              <p><textarea>Esempio...</textarea></p>
+            </li>
+            <li>
+              <!-- SELECT -->
+              <details>
+                <summary>
+                  <code>&lt;select&gt;</code> - Consente all'utente di
+                  selezionare l'opzione da un menu a discesa. Ogni opzione è
+                  definita da un elemento <code>&lt;option&gt;</code>
+                  <select>
+                    <option value="opzione1">Opzione 1</option>
+                    <option value="opzione2">Opzione 2</option>
+                    <option value="opzione3">Opzione 3</option>
+                  </select>
+                </summary>
+                è possibile mostrare più opzioni contemporaneamente usando
+                l'attributo <code>size</code>, e consentire la selezione di più
+                opzioni usando l'attributo <code>multiple</code>.
+                <select size="3" multiple>
+                  <option value="opzione1">Opzione 1</option>
+                  <option value="opzione2">Opzione 2</option>
+                  <option value="opzione3">Opzione 3</option>
+                </select>
+              </details>
+            </li>
+            <li>
+              <!-- BUTTON -->
+              <code>&lt;button&gt;</code> - Elemento introdotto per offrire
+              maggiore flessibilità nella creazione di pulsanti. Può essere
+              utilizzato per creare pulsanti di invio, reset o pulsanti
+              generici. A differenza di
+              <code
+                >&lt;input type=<span class="attributo">"submit"</span
+                >&gt;</code
+              >, il contenuto del pulsante può includere testo, immagini o altri
+              elementi HTML.
+              <p>
+                <button>
+                  <img
+                    src="Immagini/suricato.png"
+                    class="imgbutton"
+                    alt="Pulsante"
+                  />Invia
+                </button>
+              </p>
+            </li>
+            <li>
+              <!-- LABEL -->
+              <code>&lt;label&gt;</code> - Elemento utilizzato per associare
+              un'etichetta a un campo di input. Aiuta a migliorare
+              l'accessibilità e l'usabilità del modulo. L'attributo
+              <code>for</code> deve corrispondere all'attributo
+              <code>id</code> del campo di input a cui si riferisce. In questo
+              modo, quando l'utente clicca sull'etichetta, il focus viene
+              spostato al campo di input associato.
+              <br />
+              <label>Etá: <input type="text" /></label>
+              <br />
+              Genere:
+              <input type="radio" id="F" name="genere" value="F" />
+              <label for="F">Femmina</label>
+              <input type="radio" id="M" name="genere" value="M" />
+              <label for="M">Maschio</label>
+            </li>
+            <li>
+              <!-- FIELDSET -->
+              <code>&lt;fieldset&gt;</code> - Elemento utilizzato per
+              raggruppare logicamente i campi di input all'interno di un modulo.
+              Spesso accompagnato da <code>&lt;legend&gt;</code>, che fornisce
+              una didascalia per il gruppo di campi.
+              <br />
+              <fieldset>
+                <legend>Informazioni personali</legend>
+                <label>Nome: <input type="text" /></label><br />
+                <label>Cognome: <input type="text" /></label><br />
+                <label>Email: <input type="email" /></label>
+              </fieldset>
+            </li>
+          </ul>
+        </section>
+        <section id="varie" class="varie">
+          <h2>Varie</h2>
+          <ul>
+            <li>
+              <!-- !DOCTYPE -->
+              <code>&lt;!DOCTYPE&gt;</code> - Elemento posto all'inizio della
+              pagina web, comunica al browser quale versione di HTML stiamo
+              usando. <br />
+              Per HTML5 <code>&lt;!DOCTYPE html&gt;</code>
+            </li>
+            <li>
+              <!-- COMMENTI -->
+              <code class="commento">&lt;!-- --&gt;</code> - Tutto quello che
+              viene scritto all'interno di questo elemento è considerato un
+              commento.
+            </li>
+            <li>
+              <!-- ID -->
+              <code>id</code> - Attributo utilizzato per identificare
+              univocamente un elemento.
+            </li>
+            <li>
+              <!-- CLASS -->
+              <code>class</code> - Attributo utilizzato per identificare uno o
+              più elementi insieme. Un elemento può avere più classi.
+            </li>
+            <li>
+              <!-- IFRAME -->
+              <code>&lt;iframe&gt;</code> - Elemento utilizzato per incorporare
+              una pagina web all'interno di un altra pagina.
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11157.285727695751!2d9.583182149999999!3d45.6443664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sit!2sit!4v1774201778375!5m2!1sit!2sit"
+                width="600"
+                height="450"
+                style="border: 0"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </li>
+          </ul>
+        </section>
+        <!-- AUDIO E VIDEO -->
+        <section id="audiovideo" class="audiovideo">
+          <ul>
+            <!-- VIDEO -->
+            <li>
+              <details>
+                <summary>
+                  <code>&lt;video&gt;</code> - Elemento che prevede un certo
+                  numero di attributi che consentono di controllare la
+                  riproduzione.
+                </summary>
+                <p>Attributi:</p>
+                <ul>
+                  <!-- SRC -->
+                  <li class="sottoelemento">
+                    <code>src</code> - Specifica il percorso del video.
+                  </li>
+                  <!-- POSTER -->
+                  <li class="sottoelemento">
+                    <code>poster</code> - Specifica un'immagine da mostrare
+                    mentre il video è in download o finchè l'utente non avvia la
+                    riproduzione.
+                  </li>
+                  <!-- PRELOAD -->
+                  <li class="sottoelemento">
+                    <code>preload</code> - Dice al browser cosa fare mentre
+                    carica la pagina. <code class="attributo">"auto"</code> per
+                    scaricare il video durante il caricamento della pagina,
+                    <code class="attributo">"none"</code> per non scaricare il
+                    video finchè la riproduzione non viene avviatta, e
+                    <code class="attributo">"metadata"</code> per raccogliere le
+                    informazioni del video.
+                  </li>
+                  <!-- WIDTH E HEIGHT -->
+                  <li class="sottoelemento">
+                    <code>width,height</code> - Specificano le dimenzioni del
+                    player.
+                  </li>
+                  <!-- CONTROLS -->
+                  <li class="sottoelemento">
+                    <code>controls</code> - Indica che deve essere il browser a
+                    fornire i propri controlli di riproduzione.
+                  </li>
+                  <!-- AUTOPLAY -->
+                  <li class="sottoelemento">
+                    <code>autoplay</code> - Avvio automatico del video al
+                    caricamento della pagina.
+                  </li>
+                  <!-- LOOP -->
+                  <li class="sottoelemento">
+                    <code>loop</code> - Indica che la riproduzione del video
+                    dovrà ricominciare da capo una volta terminata.
+                  </li>
+                </ul>
+                <video
+                  src="Video/panda.webm"
+                  preload="auto"
+                  controls
+                  width="400"
+                  height="300"
+                ></video>
+              </details>
+            </li>
+            <!-- AUDIO -->
+            <li>
+              <audio
+                src="Audio/Man of War.flac"
+                controls
+                preload="auto"
+              ></audio>
+            </li>
+            <!-- SOURCE -->
+            <li>
+              <code>&lt;source&gt;</code> - Per specificare la posizione del file da riprodurre, si può usare questo elemento dentro <code>&lt;video&gt;</code> o <code>&lt;audio&gt;</code>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <!-- PAGINA CSS -->
+      <div id="pagina-css" class="pagina" style="display: none">
+        <section id="base" class="base">
+          <h2>Elementi base:</h2>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
