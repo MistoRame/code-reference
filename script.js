@@ -53,6 +53,20 @@ b.addEventListener('input', aggiorna);
 aggiorna(); // calcolo iniziale
 
 
+/* ── FUNZIONE MENU HAMBURGER MOBILE ──────────────── */
+function toggleMenu() {
+  const indiceAttivo = document.querySelector('.indice:not([style*="display: none"])');
+  indiceAttivo.classList.toggle('aperto');
+}
+
+// chiude il menu quando si clicca un link
+document.querySelectorAll('.indice a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelectorAll('.indice').forEach(i => {
+      i.classList.remove('aperto');
+    });
+  });
+});
 
 /* ── FUNZIONE PER SCRIVERE HTML DINAMICAMENTE DA UNA TEXTAREA ─────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {

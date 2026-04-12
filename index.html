@@ -2,7 +2,10 @@
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
     <meta http-equiv="pragma" content="no-cache" />
     <title>Dizionario HTML</title>
     <link rel="stylesheet" href="style.css" />
@@ -21,6 +24,7 @@
     ></script>
   </head>
   <body>
+    <button id="hamburger" onclick="toggleMenu()">☰</button>
     <main>
       <h1 class="titolo">
         <span class="tab attiva-tab" onclick="cambiaPagina('pagina-html', this)"
@@ -517,7 +521,7 @@
         </section>
         <!-- LISTE -->
         <section id="liste" class="liste">
-          <h2>Liste:</h2>
+          <h2>Liste</h2>
           <ul>
             <!-- OL -->
             <li>
@@ -573,7 +577,7 @@
         </section>
         <!-- LINK -->
         <section id="link" class="link">
-          <h2>Link:</h2>
+          <h2>Link</h2>
           <ul>
             <li>
               <details>
@@ -638,7 +642,7 @@
         </section>
         <!-- IMMAGINI -->
         <section id="img" class="img">
-          <h2>Immagini:</h2>
+          <h2>Immagini</h2>
           <ul>
             <li>
               <details>
@@ -710,13 +714,13 @@
         </section>
         <!-- TABELLE -->
         <section id="tabelle" class="tabelle">
-          <h2>Tabelle:</h2>
+          <h2>Tabelle</h2>
           <ul>
             <li>
               <!-- CAPTION -->
               <code>&lt;caption&gt;</code> - Elemento per fornire una didascalia
               per una tabella. Deve essere il primo elemento dentro
-              <code>table</code>.              
+              <code>table</code>.
             </li>
             <li>
               <!-- TABLE -->
@@ -980,7 +984,7 @@
         </section>
         <!-- MODULI -->
         <section id="moduli" class="moduli">
-          <h2>Moduli:</h2>
+          <h2>Moduli</h2>
           <ul>
             <li>
               <details>
@@ -1358,7 +1362,7 @@
         </section>
         <!-- AUDIO E VIDEO -->
         <section id="audiovideo" class="audiovideo">
-          <h2>Video e Audio:</h2>
+          <h2>Video e Audio</h2>
           <ul>
             <!-- VIDEO -->
             <li>
@@ -1435,11 +1439,65 @@
             </li>
           </ul>
         </section>
+        <!-- ATTRIBUTI -->
+        <section id="attributi" class="attributi">
+          <h2>Attributi Globali</h2>
+          <ul>
+            <li>
+              <!-- ID -->
+              <code>id</code> - Identifica univocamente un elemento.
+            </li>
+            <li>
+              <!-- CLASS -->
+              <code>class</code> - Assegnare una o più classi CSS a un elemento.
+            </li>
+            <li>
+              <!-- TITLE -->
+              <code title="Esempio">title</code> - Fornisce informazioni aggiuntive sull'elemento sotto forma di tooltip al passaggio del mouse.
+            </li>
+            <li>
+              <!-- LANG -->
+              <code>lang</code> - Specifica la lingua del contenuto dell'elemento, utile per l'accessibilità e per i motori di ricerca.
+            </li>
+            <li>
+              <!-- DIR -->
+              <code>dir</code> - Indica la direzione del testo, può essere <code class="attributo">"ltr"</code> per testo da sinistra a destra, o <code class="attributo">"rtl"</code> per testo da destra a sinistra.
+            </li>
+            <li>
+              <!-- HIDDEN -->
+              <code>hidden</code> - Nasconde l'elemento dalla visualizzazione, ma lo mantiene nel DOM.
+            </li>
+            <li>
+              <!-- TABINDEX -->
+              <code>tabindex</code> - Controlla l'ordine di tabulazione degli elementi interattivi, consentendo di navigare tra di essi usando il tasto Tab.
+            </li>
+            <li>
+              <!-- CONTENTEDITABLE -->
+              <code contenteditable="true" spellcheck="false">contenteditable</code> - Rende l'elemento modificabile direttamente dall'utente, consentendo di creare aree di testo editabili senza l'uso di campi di input.
+            </li>
+            <li>
+              <!-- DRAGGABLE -->
+              <code draggable="true">draggable</code> - Rende l'elemento trascinabile, consentendo agli utenti di spostarlo all'interno della pagina o tra finestre del browser.
+            </li>
+            <li>
+              <!-- SPELLCHECK -->
+              <code>spellcheck</code> - Indica se il browser deve eseguire un controllo ortografico sul contenuto dell'elemento. Può essere impostato su <code class="attributo">"true"</code> per abilitare il controllo ortografico, o su <code class="attributo">"false"</code> per disabilitarlo.
+            </li>
+            <li>
+              <!-- TRANSLATE -->
+              <code>translate</code> - Indica se il contenuto dell'elemento deve essere tradotto quando la pagina viene tradotta in un'altra lingua. Può essere impostato su <code class="attributo">"yes"</code> per consentire la traduzione, o su <code class="attributo">"no"</code> per escludere l'elemento dalla traduzione.
+            </li>
+            <li>
+              <!-- data-* -->
+              <code>data-*</code> - Permette di aggiungere attributi personalizzati all'elemento, utili per immagazzinare informazioni specifiche dell'applicazione.
+            </li>
+          </ul>
+        </section>
       </div>
       <!-- PAGINA CSS -->
       <div id="pagina-css" class="pagina" style="display: none">
         <section id="css-base" class="css-base">
-          <h2>Elementi base:</h2>
+          <h2>Elementi base</h2>
         </section>
       </div>
     </main>
