@@ -6,7 +6,19 @@
     <meta http-equiv="pragma" content="no-cache" />
     <title>Dizionario HTML</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"
+      defer
+    ></script>
   </head>
   <body>
     <main>
@@ -41,14 +53,21 @@
         <section id="base" class="base">
           <h2>Elementi base</h2>
           <ul>
+            <li>
+              <!-- !DOCTYPE -->
+              <code>&lt;!DOCTYPE&gt;</code> - Elemento posto all'inizio della
+              pagina web, comunica al browser quale versione di HTML stiamo
+              usando. <br />
+              Per HTML5 <code>&lt;!DOCTYPE html&gt;</code>
+            </li>
             <!-- HTML -->
             <li>
               <code>&lt;html&gt;</code> - Elemento radice di ogni pagina HTML
             </li>
-            <!-- ELEMENTI DENTRO HEAD -->
             <li>
               <details>
                 <summary>
+                  <!-- HEAD -->
                   <code>&lt;head&gt;</code> - Contiene metadati della pagina
                 </summary>
                 <ul>
@@ -57,18 +76,104 @@
                     <code>&lt;title&gt;</code> - Definisce il titolo della
                     pagina, visualizzato sulla scheda del browser
                   </li>
+                  <!-- META -->
                   <li class="sottoelemento">
                     <code>&lt;meta&gt;</code> - Contiene informazioni relative
-                    alla pagina web.
+                    alla pagina web, come la codifica dei caratteri, la
+                    descrizione, l'autore, istruzioni per i motori di ricerca,
+                    ecc. Non necessita di un tag di chiusura. Gli attributi più
+                    comuni sono name, content, charset e http-equiv.
+                    <p>Attributi:</p>
+                    <ul>
+                      <li class="sottoelemento">
+                        <!-- NAME -->
+                        <p>
+                          <code>name</code> - Usato per definire informazioni
+                          usate dai motori di ricerca, browser e altri servizi.
+                          L'attributo <i>content</i> contiene l'effetiva
+                          descrizione.
+                        </p>
+                        <ul>
+                          <li class="sottoelemento">
+                            <!-- DESCRIPTION -->
+                            <code class="attributo">"description"</code> -
+                            Contiene una descrizione della pagina, utilizzata
+                            dai motori di ricerca per mostrare un'anteprima nei
+                            risultati di ricerca.
+                          </li>
+                          <li class="sottoelemento">
+                            <!-- KEYWORDS -->
+                            <code class="attributo">"keywords"</code> - Elenco
+                            di parole chiave che un utente può usare per cercare
+                            la pagina. Valore non più utilizzato in quanto i
+                            motori di ricerca non lo considerano più per il
+                            posizionamento nei risultati di ricerca.
+                          </li>
+                          <li class="sottoelemento">
+                            <!-- ROBOTS -->
+                            <code class="attributo">"robots"</code> - Indica se
+                            i motori di ricerca devono indicizzare la pagina.
+                            Valori possibili: "index" (consente
+                            l'indicizzazione), "noindex" (impedisce
+                            l'indicizzazione), "follow" (consente ai motori di
+                            ricerca di seguire i link presenti nella pagina),
+                            "nofollow" (impedisce ai motori di ricerca di
+                            seguire i link presenti nella pagina).
+                          </li>
+                        </ul>
+                        <p>
+                          <code>http-equiv</code> - Usato come comando per il
+                          browser, agiscono come gli HTTP headers. L'attributo
+                          <i>content</i> contiene l'effetiva descrizione.
+                        </p>
+                        <ul>
+                          <li class="sottoelemento">
+                            <!-- AUTHOR -->
+                            <code class="attributo">"author"</code> - Definisce
+                            l'autore della pagina.
+                          </li>
+                          <li class="sottoelemento">
+                            <!-- PRAGMA -->
+                            <code class="attributo">"pragma"</code> - Impedisce
+                            al browser di memorizzare la pagina nella cache.
+                            Valore: "no-cache".
+                          </li>
+                          <li class="sottoelemento">
+                            <!-- EXPIRES -->
+                            <code class="attributo">"expires"</code> - Indica la
+                            data di scadenza della pagina, dopo la quale il
+                            browser la considera obsoleta e la ricarica dal
+                            server. Il valore deve essere una data in formato
+                            HTTP (Es. "Wed, 21 Oct 2025 07:28:00 GMT") o "0" per
+                            indicare che la pagina è già scaduta.
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
               </details>
             </li>
-            <!-- ELEMENTI DENTRO BODY -->
+            <!-- BODY -->
             <li>
               <code>&lt;body&gt;</code> - Contiene il contenuto visibile della
               pagina
             </li>
+          </ul>
+        </section>
+        <!-- SEMANTICA -->
+        <section id="semantica" class="semantica">
+          <h2>Struttura e layout</h2>
+          <p>
+            Elementi utilizzati per organizzare la struttura della pagina.
+            Alcuni sono generici, altri hanno valenza semantica (<code
+              >&lt;span&gt;</code
+            >
+            e <code>&lt;p&gt;</code>), in quanto comunicano al browser e agli
+            screen reader il loro significato. Accettano tutti attributi
+            globali.
+          </p>
+          <ul>
             <!-- H1-H6 -->
             <li>
               <code>&lt;h1&gt;</code> \ <code>&lt;h6&gt;</code> - Elementi per
@@ -98,45 +203,52 @@
               <code>&lt;div&gt;</code>
               - Elemento per definire blocchi di contenuto
             </li>
-          </ul>
-        </section>
-        <!-- SEMANTICA -->
-        <section id="semantica" class="semantica">
-          <h2>Elementi semantici</h2>
-          <p>
-            A differenza degli elementi base come <code>&lt;div&gt;</code>,
-            <code>&lt;span&gt;</code> e <code>&lt;p&gt;</code> che sono
-            generici, gli elementi semantici comunicano il
-            <em>significato</em> del contenuto al browser e agli screen reader
-          </p>
-          <ul>
             <!-- HEADER -->
             <li>
-              <code>&lt;header&gt;</code>
+              <code>&lt;header&gt;</code> - Intestazione della pagina o di una
+              sezione. Può contenere elementi come il logo, il titolo, il menu
+              di navigazione, ecc. Può essere usato all'interno di
+              <code>&lt;article&gt;</code> o <code>&lt;section&gt;</code>.
             </li>
             <!-- FOOTER -->
             <li>
-              <code>&lt;footer&gt;</code>
+              <code>&lt;footer&gt;</code> - Piè di pagina. Come
+              <code>&lt;header&gt;</code>, può essere usato all'interno di
+              <code>&lt;article&gt;</code> o <code>&lt;section&gt;</code>.
+              Contiene informazioni come i diritti d'autore, i link ai social
+              media, i contatti, ecc.
             </li>
             <!-- NAV -->
             <li>
-              <code>&lt;nav&gt;</code>
+              <code>&lt;nav&gt;</code> - Elemento per definire una sezione di
+              navigazione, che contiene link a pagine o sezioni correlate. Può
+              essere usato all'interno di <code>&lt;header&gt;</code>,
+              <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code> o
+              <code>&lt;section&gt;</code>.
             </li>
             <!-- MAIN -->
             <li>
-              <code>&lt;main&gt;</code>
+              <code>&lt;main&gt;</code> - Elemento per definire il contenuto
+              principale della pagina. Deve essere unico e non può apparire più
+              di una volta e all'interno di altri elementi strutturali.
             </li>
             <!-- ARTICLE -->
             <li>
-              <code>&lt;article&gt;</code>
+              <code>&lt;article&gt;</code> - Elemento per definire un contenuto
+              autonomo e indipendente, come un post o una notizia. Può essere
+              usato fuori dal contesto della pagina.
             </li>
             <!-- ASIDE -->
             <li>
-              <code>&lt;aside&gt;</code>
+              <code>&lt;aside&gt;</code> - Elemento per definire un contenuto
+              correlato al contenuto principale, come una barra laterale, un box
+              di approfondimento, ecc. Può essere usato all'interno di
+              <code>&lt;article&gt;</code> o <code>&lt;section&gt;</code>.
             </li>
             <!-- SECTION -->
             <li>
-              <code>&lt;section&gt;</code>
+              <code>&lt;section&gt;</code> - Sezione tematica della pagina, che
+              contiene un insieme di contenuti correlati.
             </li>
           </ul>
         </section>
@@ -361,6 +473,46 @@
               <code>&lt;s&gt;</code> - Elemento per definire testo non più
               corretto o rilevante. <s>Visualizzato in barrato</s>
             </li>
+            <!-- PRE E CODE -->
+            <li>
+              <code>&lt;pre&gt;</code>, <code>&lt;code&gt;</code> - Elementi per
+              definire blocchi di codice. Il testo all'interno di
+              <code>&lt;pre&gt;</code> viene visualizzato con spazi e
+              interruzioni di linea preservati, mentre
+              <code>&lt;code&gt;</code> viene visualizzato in un font
+              monospaziato. Spesso usati insieme per mostrare esempi di codice.
+            </li>
+            <!-- MARK -->
+            <li>
+              <code>&lt;mark&gt;</code> - Elemento per evidenziare parti di
+              testo.
+              <mark>Visualizzato in giallo</mark>
+            </li>
+            <!-- TIME -->
+            <li>
+              <code>&lt;time&gt;</code> - Elemento per definire una data o
+              orario leggibile dalle macchine, ha un attributo specifico
+              <code>datetime</code> che contiene la data in formato standard
+              (2025-01-15).
+            </li>
+            <!-- KBD -->
+            <li>
+              <code>&lt;kbd&gt;</code> - Elemento per definire input da
+              tastiera.
+              <kbd>Ctrl+C</kbd>
+            </li>
+            <!-- SAMP -->
+            <li>
+              <code>&lt;samp&gt;</code> - Elemento per definire output di
+              programmi. Visualizzato in font monospace.
+              <samp>Errore: File non trovato</samp>
+            </li>
+            <!-- VAR -->
+            <li>
+              <code>&lt;var&gt;</code> - Elemento per rappresentare variabili
+              matematiche o di programmazione. Visualizzato in corsivo.
+              <var>x</var> = 5
+            </li>
           </ul>
         </section>
         <!-- LISTE -->
@@ -524,6 +676,23 @@
               </details>
             </li>
             <li>
+              <!-- PICTURE -->
+              <code>&lt;picture&gt;</code> - Elemento che permette di
+              specificare più sorgenti per un'immagine, lasciando scegliere al
+              browser quale utilizzare in base alle dimensioni dello schermo o
+              al formato supportato.
+            </li>
+            <li>
+              <!-- SOURCE -->
+              <code>&lt;source&gt;</code> - Elemento per specificare le diverse
+              sorgenti per un'immagine all'interno di un elemento
+              <code>&lt;picture&gt;</code>. Ha attributi specifici:
+              <code>src</code> (percorso file), <code>srcset</code> (immagini
+              responsive), <code>media</code> (condizioni per l'utilizzo della
+              sorgente) e <code>type</code> (formato dell'immagine). Non
+              necessita di un tag di chiusura, è un elemento vuoto.
+            </li>
+            <li>
               <!-- FIGURE -->
               <code>&lt;figure&gt;</code> - Elemento per raggruppare una o più
               immagini con una didascalia.
@@ -543,6 +712,12 @@
         <section id="tabelle" class="tabelle">
           <h2>Tabelle:</h2>
           <ul>
+            <li>
+              <!-- CAPTION -->
+              <code>&lt;caption&gt;</code> - Elemento per fornire una didascalia
+              per una tabella. Deve essere il primo elemento dentro
+              <code>table</code>.              
+            </li>
             <li>
               <!-- TABLE -->
               <code>&lt;table&gt;</code> - Elemento per definire una tabella, il
@@ -593,27 +768,27 @@
           </ul>
           <div class="tabellaesempio">
             <div class="codice">
-              <pre><code>&lt;table&gt;
-   &lt;tr&gt;
-     &lt;th&gt;&lt;/th&gt;
-     &lt;th scope="col"&gt;9am&lt;/th&gt;
-     &lt;th scope="col"&gt;10am&lt;/th&gt;
-     &lt;th scope="col"&gt;11am&lt;/th&gt;
-     &lt;th scope="col"&gt;12am&lt;/th&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-     &lt;th scope="row"&gt;Lunedi&lt;/th&gt;
-     &lt;td colspan="2"&gt;Matematica&lt;/td&gt;
-     &lt;td&gt;Storia&lt;/td&gt;
-     &lt;td rowspan="2"&gt;Informatica&lt;/td&gt;
-   &lt;/tr&gt;
-   &lt;tr&gt;
-     &lt;th scope="row"&gt;Martedi&lt;/th&gt;
-     &lt;td&gt;Informatica&lt;/td&gt;
-     &lt;td&gt;Matematica&lt;/td&gt;
-     &lt;td&gt;Storia&lt;/td&gt;
-   &lt;/tr&gt;
- &lt;/table&gt;</code></pre>
+              <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th scope="col"&gt;9am&lt;/th&gt;
+    &lt;th scope="col"&gt;10am&lt;/th&gt;
+    &lt;th scope="col"&gt;11am&lt;/th&gt;
+    &lt;th scope="col"&gt;12am&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope="row"&gt;Lunedi&lt;/th&gt;
+    &lt;td colspan="2"&gt;Matematica&lt;/td&gt;
+    &lt;td&gt;Storia&lt;/td&gt;
+    &lt;td rowspan="2"&gt;Informatica&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope="row"&gt;Martedi&lt;/th&gt;
+    &lt;td&gt;Informatica&lt;/td&gt;
+    &lt;td&gt;Matematica&lt;/td&gt;
+    &lt;td&gt;Storia&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
             </div>
             <div class="esempio">
               <table>
@@ -662,7 +837,7 @@
           </ul>
           <div class="tabellaesempio">
             <div class="codice">
-              <pre><code>&lt;table&gt;
+              <pre><code class="language-html">&lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;Data&lt;/th&gt;
@@ -1009,6 +1184,19 @@
                 </ul>
               </details>
             </li>
+            <!-- DATALIST -->
+            <li>
+              <code>&lt;datalist&gt;</code> - Fornisce suggerimenti automatici
+              per un <code>&lt;input&gt;</code>. Va collegato all'input tramite
+              l'attributo <code>id</code> corrispondente al
+              <code>list</code> dell'input.
+              <input list="frutti" type="text" />
+              <datalist id="frutti">
+                <option value="Mela"></option>
+                <option value="Pera"></option>
+                <option value="Banana"></option>
+              </datalist>
+            </li>
             <!-- TEXTAREA -->
             <li>
               <code>&lt;textarea&gt;</code> - Elemento per definire un campo di
@@ -1016,7 +1204,7 @@
               necessita di un tag di chiusura. Tutto il testo che compare tra i
               due tag verrà visualizzato all'interno del campo di input come
               testo predefinito.
-              <p><textarea>Esempio...</textarea></p>
+              <textarea>Esempio...</textarea>
             </li>
             <li>
               <!-- SELECT -->
@@ -1094,18 +1282,49 @@
                 <label>Email: <input type="email" /></label>
               </fieldset>
             </li>
+            <!-- PROGRESS -->
+            <li>
+              <code>&lt;progress&gt;</code> - Elemento utilizzato per
+              visualizzare il progresso di un'attività in corso. L'attributo
+              <code>value</code>
+              specifica il progresso attuale, mentre l'attributo
+              <code>max</code> specifica il valore massimo del progresso.
+              <progress value="70" max="100"></progress>
+            </li>
+            <!-- METER -->
+            <li>
+              <code>&lt;meter&gt;</code> - Elemento utilizzato per visualizzare
+              una misurazione all'interno di un intervallo specifico,
+              rappresenta una misurazione statica. L'attributo
+              <code>value</code> specifica la misurazione attuale, mentre gli
+              attributi <code>min</code>, <code>max</code>, e <code>low</code>,
+              <code>high</code>, e <code>optimum</code> possono essere usati per
+              definire l'intervallo e i valori di riferimento.
+              <meter
+                value="0.6"
+                min="0"
+                max="1"
+                low="0.3"
+                high="0.8"
+                optimum="0.5"
+              ></meter>
+            </li>
+            <!-- OUTPUT -->
+            <li>
+              <code>&lt;output&gt;</code> - Elemento utilizzato per visualizzare
+              il risultato di un calcolo o l'output di un'operazione. Utilizza
+              l'attributo <code>for</code>
+              per collegare l'output agli input che lo generano.
+              <input type="number" id="valoreA" value="5" />
+              <input type="number" id="valoreB" value="3" />
+              <output id="risultatoAB"></output>
+            </li>
           </ul>
         </section>
+        <!-- VARIE -->
         <section id="varie" class="varie">
           <h2>Varie</h2>
           <ul>
-            <li>
-              <!-- !DOCTYPE -->
-              <code>&lt;!DOCTYPE&gt;</code> - Elemento posto all'inizio della
-              pagina web, comunica al browser quale versione di HTML stiamo
-              usando. <br />
-              Per HTML5 <code>&lt;!DOCTYPE html&gt;</code>
-            </li>
             <li>
               <!-- COMMENTI -->
               <code class="commento">&lt;!-- --&gt;</code> - Tutto quello che
@@ -1203,22 +1422,23 @@
             </li>
             <!-- AUDIO -->
             <li>
-              <audio
-                src="Audio/Forest.mp3"
-                controls
-                preload="auto"
-              ></audio>
+              <code>&lt;audio&gt;</code> - Elemento che permette di inserire un
+              file audio nella pagina. Prevede gli stessi attributi di
+              <code>&lt;video&gt;</code>.
+              <audio src="Audio/Forest.mp3" controls preload="auto"></audio>
             </li>
             <!-- SOURCE -->
             <li>
-              <code>&lt;source&gt;</code> - Per specificare la posizione del file da riprodurre, si può usare questo elemento dentro <code>&lt;video&gt;</code> o <code>&lt;audio&gt;</code>
+              <code>&lt;source&gt;</code> - Per specificare la posizione del
+              file da riprodurre, si può usare questo elemento dentro
+              <code>&lt;video&gt;</code> o <code>&lt;audio&gt;</code>
             </li>
           </ul>
         </section>
       </div>
       <!-- PAGINA CSS -->
       <div id="pagina-css" class="pagina" style="display: none">
-        <section id="base" class="base">
+        <section id="css-base" class="css-base">
           <h2>Elementi base:</h2>
         </section>
       </div>

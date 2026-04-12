@@ -148,16 +148,21 @@ img.imgbutton {
 /* ── TABELLE ──────────────────────────────────────────── */
 .tabellaesempio {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 3fr 1fr;
   justify-content: center;
   gap: 20px;
+} 
+
+.codice {
+  max-height: 500px;  /* altezza massima prima che appaia la scrollbar */
+  overflow-y: auto;   /* scrollbar verticale automatica */
 }
 
 table { border-collapse: collapse; background-color: rgb(227,220,220); }
 th, td { border: 1px solid #302e2e; padding: 8px 12px; }
 
 /* ── MODULI ───────────────────────────────────────────── */
-textarea {
+textarea{
   width: 100%;
   max-width: 400px;
   padding: 10px;
@@ -165,6 +170,8 @@ textarea {
   border-radius: 4px;
   font-family: var(--font-principale);
   font-size: 100%;
+  display: block;    /* manda a capo l'elemento */
+  margin-top: 8px;   /* aggiunge spazio sopra */
 }
 
 fieldset {
@@ -192,4 +199,31 @@ fieldset {
 
 .tab.attiva-tab {
   border-bottom: 3px solid white;
+}
+
+/* ── AUDIO E VIDEO ───────────────────────────────────────────── */
+audio, video {
+  display: block;    /* manda a capo l'elemento */
+  margin-top: 8px;   /* aggiunge spazio sopra */
+}
+
+/* ── PAGINA CSS ───────────────────────────────────────────── */
+
+/* tema CSS - sovrascrive i colori di default */
+body.tema-css {
+  background-color: #1a1a2e; /* sfondo scuro blu */
+  color: #e0e0e0; 
+}
+
+body.tema-css section {
+  background-color: #16213e;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.tema-css h2 {
+  color: #4cc9f0; /* azzurro per i titoli */
+}
+
+body.tema-css code {
+  color: #f72585; /* rosa per il codice */
 }
