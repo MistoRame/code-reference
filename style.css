@@ -12,12 +12,13 @@
 /* ── BASE ─────────────────────────────────────────────── */
 body {
   font-family: var(--font-principale);
-  font-size: 120%;
-  max-width: 1400px;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.2rem); /* Fluido: non troppo piccolo su mobile, non gigante su desktop */
+  line-height: 1.6;
+  max-width: 1200px; /* Ridotto leggermente per leggibilità */
   margin: 0 auto;
   padding: 20px;
   background-color: var(--colore-sfondo);
-  color: #2c2c2c;
+  color: #2c2c2c; 
 }
 
 h1,
@@ -47,10 +48,12 @@ h2 {
   flex-direction: column;
   gap: 8px;
   padding: 15px;
-  background-color: whitesmoke;
   border-radius: 8px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
   z-index: 999;
+  background-color: rgba(245, 245, 245, 0.8);
+  backdrop-filter: blur(10px); /* Effetto vetro sfocato */
+  border: 1px solid #ddd;
 }
 
 .indice-titolo {
@@ -140,10 +143,23 @@ details p {
 
 /* ── TESTO E CODICE ───────────────────────────────────── */
 code {
-  color: var(--colore-principale);
-  font-size: 120%;
-  padding: 2px 6px;
-  border-radius: 4px;
+ font-family: 'Consolas', 'Monaco', 'Courier New', monospace; /* Font adatto al codice */
+  color: var(--colore-principale);    
+  font-size: 0.95em; /* Un pelo più piccolo del testo normale per equilibrio */
+}
+
+/* Quando il codice è dentro la tua classe .codice, lo facciamo diventare un blocco */
+.codice code {
+  display: block;       /* Si comporta come un rettangolo intero */  
+  overflow-x: auto;     /* Se il codice è lungo, appare la scrollbar solo qui */
+  padding: 15px;
+  line-height: 1.5;
+}
+
+/* Evitiamo che il tema CSS sovrascriva male */
+body.tema-css .codice code {
+  background-color: #0d1117;
+  color: #e6edf3;
 }
 
 .attributo {
@@ -338,7 +354,7 @@ body.tema-css code {
   .codice {
     overflow-x: auto;
     width: 100%;
-    font-size: 70%;
+    font-size: 80%;
   }
 
   .esempio table {
