@@ -8,7 +8,6 @@
   --colore-commenti: #6a9955;
   --colore-valore: #c9704c;
   --colore-titolo: #c0392b;
-  --colore-sfondo: #f5f0e8;
   --colore-regola: #c586c0;
   --colore-graffa: #ffd700;
   --font-principale: "Chakra Petch", sans-serif;
@@ -34,8 +33,6 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: var(--colore-sfondo);
-  color: #2c2c2c;
   overflow-x: hidden;
 }
 
@@ -172,7 +169,7 @@ header {
 
 .indice a {
   color: var(--colore-elementi);
-  font-size: 13px;
+  font-size: 18px;
   padding: 3px 6px;
   border-radius: 4px;
   text-decoration: none;
@@ -206,6 +203,29 @@ header {
   to {
     opacity: 1;
   }
+}
+
+/* ── TEMA HTML ────────────────────────────── */
+
+body.tema-html {
+   background-color: #fa9e41;
+}
+
+body.tema-html section {
+  background-color: #ff9457;
+  color: #000000;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.tema-html #pagina-html p,
+body.tema-html #pagina-html li:not(.sottoelemento),
+body.tema-html #pagina-html li.sottoelemento,
+body.tema-html #pagina-html summary,
+body.tema-html #pagina-html h2,
+body.tema-html #pagina-html h3,
+body.tema-html #pagina-html legend,
+body.tema-html #pagina-html label {
+  color: #000000;
 }
 
 /* ── SEZIONI ──────────────────────────────────────────── */
@@ -251,7 +271,7 @@ li.sottoelemento {
 li iframe {
   margin-top: 15px;
   display: block;
-  border: 0;
+  border: solid 1px #ccc;
 }
 
 /* ── DETAILS / SUMMARY ────────────────────────────────── */
@@ -363,6 +383,13 @@ img.imgbutton {
   margin-right: 8px;
 }
 
+.tab img{
+  width: 100px;
+  height: 100px;
+  vertical-align: middle;
+
+}
+
 /* ── ESEMPIO H1-H6 ────────────────────────────────────── */
 
 .titoli {
@@ -432,7 +459,8 @@ svg {
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
 }
 
-/* ── TEMA CSS (pagina CSS) ────────────────────────────── */
+
+/* ── TEMA CSS  ────────────────────────────── */
 
 body.tema-css {
   background-color: #1a1a2e;
@@ -552,6 +580,136 @@ body.tema-css section {
   }
 }
 
+
+
+/* ── TEMA JS (pagina JS) ────────────────────────────── */
+
+body.tema-js {
+  background-color: #ffe683;
+}
+
+body.tema-js section {
+  background-color: #f4e55b;
+  color: #000000;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.tema-js #pagina-js p,
+body.tema-js #pagina-js li:not(.sottoelemento),
+body.tema-js #pagina-js li.sottoelemento,
+body.tema-js #pagina-js summary,
+body.tema-js #pagina-js h2,
+body.tema-js #pagina-js h3,
+body.tema-js #pagina-js legend,
+body.tema-js #pagina-js label {
+  color: #000000;
+}
+
+/* ── SCHEMA DICHIARAZIONE ───────────────────────────────────────── */
+
+.schema-container {
+    background: #2d2d3a;
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem;
+  font-family: Consolas, monospace;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.schema-row {
+  display: inline-flex;
+  align-items: flex-start;
+  font-size: 18px;
+}
+
+.schema-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 8px;
+}
+
+.schema-example {
+  margin-bottom: 40px;
+}
+
+.schema-title {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  text-align: center;
+
+  font-weight: 600;
+}
+
+.token { color: #e0e0e0; }
+.token-punct { color: #e0e0e0; padding-top: 0; }
+
+.token-keyword  { color: var(--colore-elementi); }
+.token-name     { color: var(--colore-attributi); }
+.token-operator { color: #e0e0e0; }
+.token-value    { color: rgb(198, 221, 189); }
+
+.token-line {
+  width: 2px;
+  height: 16px;
+  margin-top: 2px;
+}
+.line-keyword  { background: var(--colore-elementi); }
+.line-name     { background: var(--colore-attributi); }
+.line-operator { background: #e0e0e0; }
+.line-value    { background: rgb(198, 221, 189);  }
+
+.token-label {
+  font-family: Orbitron, monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  white-space: nowrap;
+}
+.label-keyword  { color: var(--colore-elementi); }
+.label-name     { color: var(--colore-attributi); }
+.label-operator { color: #e0e0e0; }
+.label-value    { color: rgb(198, 221, 189); }
+
+/* Bracket / parentesi quadre e graffe */
+.syntax-bracket {
+  color: #ffd700; /* giallo */
+}
+
+/* Stringhe */
+.syntax-string {
+  color: #ce9178; /* arancione/salmone */
+}
+
+/* Numeri */
+.syntax-number {
+  color: #b5cea8; /* verde chiaro */
+}
+
+/* Booleani (true/false) e null */
+.syntax-boolean {
+  color: #569cd6; /* blu */
+}
+
+/* Chiavi di oggetto (es. "nome": ...) */
+.syntax-key {
+  color: #9cdcfe; /* azzurro chiaro */
+}
+
+/* Punteggiatura: virgole, due punti */
+.syntax-punct {
+  color: #d4d4d4; /* grigio chiaro */
+}
+
+/* Parole chiave (const, let, var, function...) */
+.syntax-keyword {
+  color: #c586c0; /* magenta */
+}
+
 /* ── PLAYGROUND ───────────────────────────────────────── */
 
 main {
@@ -578,7 +736,7 @@ main.playground-active .main-content {
 
 .playground-panel {
   position: fixed;
-  top: 125px;
+  top: 145px;
   right: 0;
   width: 50%;
   height: calc(100vh - 70px);
@@ -925,5 +1083,3 @@ main.playground-active .main-content {
     margin: 0 auto;
   }
 }
-
-

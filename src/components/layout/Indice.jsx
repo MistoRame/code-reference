@@ -16,6 +16,11 @@ const indiciPagine = {
     { href: '#css-selettori',    testo: 'Selettori' },
     { href: '#css-colori',       testo: 'Colori' },
   ],
+  js: [
+    { href: '#js-introduzione', testo: 'Introduzione' },
+    { href: '#js-variabili',    testo: 'Variabili' },
+    { href: '#js-funzioni',     testo: 'Funzioni' },
+  ],
 };
 
 function Indice({ vistaAttiva }) {
