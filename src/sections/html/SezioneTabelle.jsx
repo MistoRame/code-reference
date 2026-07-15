@@ -1,4 +1,4 @@
-import BloccoCodice from "../..//components/layout/BloccoCodice";
+import BloccoCodice from "../../components/BloccoCodice";
 
 const codiceTabella1 = `<table>
             <tr>

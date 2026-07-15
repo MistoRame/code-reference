@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Header from "./components/layout/Header";
-import Layout from "./components/layout/Layout";
-import Playground from "./components/layout/Playground";
+import Header from "./components/Header";
+import Layout from "./components/Layout";
+import Playground from "./components/Playground";
 import PaginaHTML from "./pages/PaginaHTML";
 import PaginaCSS from "./pages/PaginaCSS";
 import PaginaJS from "./pages/PaginaJS";

@@ -1,4 +1,4 @@
-import DemoRGB from "../../components/layout/DemoRGB";
+import DemoRGB from "../../components/DemoRGB";
 
 function SezioneColori() {
   return (

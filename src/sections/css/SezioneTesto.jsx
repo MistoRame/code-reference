@@ -1,4 +1,4 @@
-import BloccoCodice from "../..//components/layout/BloccoCodice";
+import BloccoCodice from "../../components/BloccoCodice";
 
 const EsempioFontFace = `
   @font-face {

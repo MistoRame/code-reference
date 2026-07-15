@@ -19,7 +19,7 @@ const indiciPagine = {
   js: [
     { href: '#js-introduzione', testo: 'Introduzione' },
     { href: '#js-variabili',    testo: 'Variabili' },
-    { href: '#js-funzioni',     testo: 'Funzioni' },
+    { href: '#js-espressioni_operatori', testo: 'Espressioni e Operatori' },
   ],
 };
 

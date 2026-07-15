@@ -1,5 +1,28 @@
-import suricato from "../..//assets/Immagini/suricato.png"
+import { useState } from "react";
+import suricato from "../..//assets/Immagini/suricato.png";
 
+function SommaInput() {
+  const [valoreA, setValoreA] = useState(5);
+  const [valoreB, setValoreB] = useState(3);
+
+  return (
+    <>
+      <input
+        type="number"
+        id="valoreA"
+        value={valoreA}
+        onChange={(e) => setValoreA(Number(e.target.value))}
+      />
+      <input
+        type="number"
+        id="valoreB"
+        value={valoreB}
+        onChange={(e) => setValoreB(Number(e.target.value))}
+      />
+      <output id="risultatoAB">{valoreA + valoreB}</output>
+    </>
+  );
+}
 
 function SezioneModuli() {
   return (
@@ -347,11 +370,10 @@ function SezioneModuli() {
         <li>
           <code>&lt;output&gt;</code> - Elemento utilizzato per visualizzare il
           risultato di un calcolo o l'output di un'operazione. Utilizza
-          l'attributo <code>for</code>
+          l'attributo <code> for </code>
           per collegare l'output agli input che lo generano.
-          <input type="number" id="valoreA" value="5" />
-          <input type="number" id="valoreB" value="3" />
-          <output id="risultatoAB"></output>
+          <br />
+          <SommaInput />
         </li>
       </ul>
     </section>

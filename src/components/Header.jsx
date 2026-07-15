@@ -1,7 +1,7 @@
-import logo from "../..//assets/Immagini/code.png";
-import HTMLLogo from "../..//assets/Immagini/HTML5Logo.webp";
-import CSSLogo from "../..//assets/Immagini/CSS3Logo.png";
-import JSLogo from "../..//assets/Immagini/JavaScriptLogo.png";
+import logo from "../assets/Immagini/code.png";
+import HTMLLogo from "../assets/Immagini/HTML5Logo.webp";
+import CSSLogo from "../assets/Immagini/CSS3Logo.png";
+import JSLogo from "../assets/Immagini/JavaScriptLogo.png";
 
 function Header({
   vistaAttiva,
